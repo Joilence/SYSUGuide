@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1317AD31DF868370060E50F /* SceneListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1317AD21DF868370060E50F /* SceneListTableViewController.swift */; };
+		A1317AD51DF86B8C0060E50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1317AD41DF86B8C0060E50F /* Main.storyboard */; };
+		A1317AD71DF86C390060E50F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1317AD61DF86C390060E50F /* DetailViewController.swift */; };
+		A1317ADA1DF86D270060E50F /* SceneListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1317AD81DF86D270060E50F /* SceneListTableViewCell.swift */; };
 		A13453201DF13FE0002AEBCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134531F1DF13FE0002AEBCE /* AppDelegate.swift */; };
-		A13453221DF13FE0002AEBCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13453211DF13FE0002AEBCE /* ViewController.swift */; };
-		A13453251DF13FE0002AEBCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13453231DF13FE0002AEBCE /* Main.storyboard */; };
 		A13453271DF13FE0002AEBCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13453261DF13FE0002AEBCE /* Assets.xcassets */; };
 		A134532A1DF13FE0002AEBCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13453281DF13FE0002AEBCE /* LaunchScreen.storyboard */; };
 		A13453351DF13FE0002AEBCE /* SYSUGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13453341DF13FE0002AEBCE /* SYSUGuideTests.swift */; };
 		A13453401DF13FE0002AEBCE /* SYSUGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134533F1DF13FE0002AEBCE /* SYSUGuideUITests.swift */; };
+		A134534E1DF142DF002AEBCE /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134534D1DF142DF002AEBCE /* GuideViewController.swift */; };
+		A13453561DF1457B002AEBCE /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13453551DF1457B002AEBCE /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1317AD21DF868370060E50F /* SceneListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListTableViewController.swift; sourceTree = "<group>"; };
+		A1317AD41DF86B8C0060E50F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		A1317AD61DF86C390060E50F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A1317AD81DF86D270060E50F /* SceneListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneListTableViewCell.swift; path = ../SceneListTableViewCell.swift; sourceTree = "<group>"; };
 		A134531C1DF13FE0002AEBCE /* SYSUGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYSUGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A134531F1DF13FE0002AEBCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A13453211DF13FE0002AEBCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A13453241DF13FE0002AEBCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A13453261DF13FE0002AEBCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13453291DF13FE0002AEBCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A134532B1DF13FE0002AEBCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +53,8 @@
 		A134533B1DF13FE0002AEBCE /* SYSUGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYSUGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A134533F1DF13FE0002AEBCE /* SYSUGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYSUGuideUITests.swift; sourceTree = "<group>"; };
 		A13453411DF13FE0002AEBCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A134534D1DF142DF002AEBCE /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuideViewController.swift; path = ../GuideViewController.swift; sourceTree = "<group>"; };
+		A13453551DF1457B002AEBCE /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +105,13 @@
 		A134531E1DF13FE0002AEBCE /* SYSUGuide */ = {
 			isa = PBXGroup;
 			children = (
+				A1317AD81DF86D270060E50F /* SceneListTableViewCell.swift */,
+				A134534D1DF142DF002AEBCE /* GuideViewController.swift */,
+				A1317AD21DF868370060E50F /* SceneListTableViewController.swift */,
+				A1317AD61DF86C390060E50F /* DetailViewController.swift */,
 				A134531F1DF13FE0002AEBCE /* AppDelegate.swift */,
-				A13453211DF13FE0002AEBCE /* ViewController.swift */,
-				A13453231DF13FE0002AEBCE /* Main.storyboard */,
+				A13453551DF1457B002AEBCE /* Storage.swift */,
+				A1317AD41DF86B8C0060E50F /* Main.storyboard */,
 				A13453261DF13FE0002AEBCE /* Assets.xcassets */,
 				A13453281DF13FE0002AEBCE /* LaunchScreen.storyboard */,
 				A134532B1DF13FE0002AEBCE /* Info.plist */,
@@ -235,9 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1317AD51DF86B8C0060E50F /* Main.storyboard in Resources */,
 				A134532A1DF13FE0002AEBCE /* LaunchScreen.storyboard in Resources */,
 				A13453271DF13FE0002AEBCE /* Assets.xcassets in Resources */,
-				A13453251DF13FE0002AEBCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13453221DF13FE0002AEBCE /* ViewController.swift in Sources */,
+				A1317ADA1DF86D270060E50F /* SceneListTableViewCell.swift in Sources */,
 				A13453201DF13FE0002AEBCE /* AppDelegate.swift in Sources */,
+				A134534E1DF142DF002AEBCE /* GuideViewController.swift in Sources */,
+				A1317AD71DF86C390060E50F /* DetailViewController.swift in Sources */,
+				A13453561DF1457B002AEBCE /* Storage.swift in Sources */,
+				A1317AD31DF868370060E50F /* SceneListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +315,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A13453231DF13FE0002AEBCE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A13453241DF13FE0002AEBCE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A13453281DF13FE0002AEBCE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -514,6 +522,7 @@
 				A13453461DF13FE0002AEBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A13453471DF13FE0002AEBCE /* Build configuration list for PBXNativeTarget "SYSUGuideTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +531,7 @@
 				A13453491DF13FE0002AEBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A134534A1DF13FE0002AEBCE /* Build configuration list for PBXNativeTarget "SYSUGuideUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +540,7 @@
 				A134534C1DF13FE0002AEBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
