@@ -46,12 +46,14 @@ class SceneListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowSceneDetail", sender: sceneListTableView.cellForRow(at: indexPath))
+        sceneListTableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! SceneListTableViewCell
         let desVC = segue.destination as! DetailViewController
-        desVC.relatedScene = Scene(name: cell.name, id: 0, description: cell.descriptionDetail)
+        desVC.relatedScene = Scene(name: cell.name, id: (sceneListTableView.indexPathForSelectedRow?.row)!, description: cell.descriptionDetail)
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuideViewController: UIViewController, UITextFieldDelegate {
+class GuideViewController: UIViewController {
 
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var destinationTextField: UITextField!
@@ -24,14 +24,19 @@ class GuideViewController: UIViewController, UITextFieldDelegate {
     
     var resultCollection = [Scene]()
     @IBOutlet var resultTableView: UITableView!
+    @IBOutlet var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultTableView.register(SceneListTableViewCell.self, forCellReuseIdentifier: "SceneListCell")
 
         resultTableView.dataSource = self
         resultTableView.delegate = self
         destinationTextField.delegate = self
         startTextField.delegate = self
+        
+        storage.solveWalk()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,24 +45,24 @@ class GuideViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func guide(_ sender: UIButton) {
         let option = travelOption.selectedSegmentIndex
-        resultCollection = storage.guide(aID: startID, bID: destinationID, option: travelWay(rawValue: option)!)
+        print("Check Path from \(startID) to \(destinationID)")
+        resultCollection = storage.getPathCollection(startID: startID, destinationID: destinationID)
+        var time: Double = Double(storage.getTime(startID: startID, destinationID: destinationID))
+        if option == 0 {
+            time = Double(time)
+        } else {
+            time = Double(time) / 2.5
+        }
+        let timeInt = Int(time)
+        timeLabel.text = "About \(timeInt) min."
+        startTextField.resignFirstResponder()
+        destinationTextField.resignFirstResponder()
         resultTableView.reloadData()
     }
     
-    
-    // Data Picker
-    func pickerChanged(sender: UIPickerView) {
-        if inputStart {
-            let row = sender.selectedRow(inComponent: 0)
-            startTextField.text = storage.sceneCollection[row].name
-        } else if inputDestination {
-            let row = sender.selectedRow(inComponent: 0)
-            destinationTextField.text = storage.sceneCollection[row].name
-        } else {
-            fatalError("ERROR: none of input triggered!()")
-        }
-    }
-    
+}
+
+extension GuideViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if inputStart {
             startTextField.resignFirstResponder()
@@ -91,8 +96,7 @@ class GuideViewController: UIViewController, UITextFieldDelegate {
         inputStart = false
         inputDestination = false
     }
-    
-    
+
 }
 
 
@@ -111,8 +115,10 @@ extension GuideViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if inputStart {
+            startID = row
             startTextField.text = storage.sceneCollection[row].name
         } else if inputDestination {
+            destinationID = row
             destinationTextField.text = storage.sceneCollection[row].name
         } else {
             fatalError("ERROR: none of input triggered!(didSelectedRow)")
@@ -131,8 +137,25 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        let cell = UITableViewCell()
+        let cell = resultTableView.dequeueReusableCell(withIdentifier: "SceneListCell") as! SceneListTableViewCell
         cell.textLabel?.text = resultCollection[row].name
+        cell.name = resultCollection[row].name
+        cell.descriptionDetail = resultCollection[row].description
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowSceneDetail", sender: resultTableView.cellForRow(at: indexPath))
+        resultTableView.deselectRow(at: indexPath, animated: true)
+        startTextField.resignFirstResponder()
+        destinationTextField.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! SceneListTableViewCell
+        let desVC = segue.destination as! DetailViewController
+        let row = (resultTableView.indexPathForSelectedRow?.row)!
+        let scene = resultCollection[row]
+        desVC.relatedScene = Scene(name: cell.name, id: scene.id, description: cell.descriptionDetail)
     }
 }

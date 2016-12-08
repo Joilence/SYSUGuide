@@ -18,7 +18,30 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        switch relatedScene.id {
+        case 0:
+            imageView.image = #imageLiteral(resourceName: "image0")
+        case 1:
+            imageView.image = #imageLiteral(resourceName: "image1")
+        case 2:
+            imageView.image = #imageLiteral(resourceName: "image2")
+        case 3:
+            imageView.image = #imageLiteral(resourceName: "image3")
+        case 4:
+            imageView.image = #imageLiteral(resourceName: "image4")
+        case 5:
+            imageView.image = #imageLiteral(resourceName: "image5")
+        case 6:
+            imageView.image = #imageLiteral(resourceName: "image6")
+        case 7:
+            imageView.image = #imageLiteral(resourceName: "image7")
+        case 8:
+            imageView.image = #imageLiteral(resourceName: "image8")
+        default:
+            break
+        }
+        
         sceneTitle.text = relatedScene.name
         descriptionDetail.text = relatedScene.description
     }
